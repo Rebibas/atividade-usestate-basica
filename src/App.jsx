@@ -4,6 +4,21 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'  
 
+function ContadorDobro(){
+  const [numero, setNumero] = useState(1);
+
+function dobrar(){
+  setNumero((valorAnterior) => valorAnterior*2);
+}
+return (
+  <div>
+    <p>valor atual:{numero}</p>
+    <button onClick={dobrar}>multiplicar por 2</button>
+    <button onClick={() => setNumero(1)}>voltar a 1</button>
+  </div>
+);
+}
+
 function Contador() {
   const [contador, setContador] = useState(0);
   function aumentar() {
@@ -67,8 +82,8 @@ function ContadorComMeta() {
     );
   }
 
-  function reiniciar() {
-    setContador(0);
+function reiniciar() {
+  setContador(0);
   }
 
   return (
@@ -106,8 +121,10 @@ function App() {
       <hr />
       <h2>Desafio extra — Contador com meta</h2>
       <ContadorComMeta />
+      <h2>Desafio ainda mais Extra — Contador que Dobra</h2>
+      <ContadorDobro />
     </main>
   )
 }
 
-export default App
+export default App;
